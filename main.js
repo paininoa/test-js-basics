@@ -32,6 +32,8 @@ console.log(oggetto);
 
 // ---------------ESERCIZIO 2----------------------
 
+/*
+
 let arrayCasuale = [];
 const numeroElementi = 10;
 const valoreMinimo = 1;
@@ -49,7 +51,7 @@ console.log(arrayCasuale);
 
 let pari = 0;
 let dispari = 0;
-let totalePariDispari = {
+let conteggio = {
   pari: 0,
   dispari: 0,
 };
@@ -63,9 +65,22 @@ const contaPariDispari = (numeri) => {
     }
   }
 
-  totalePariDispari.pari = pari;
-  totalePariDispari.dispari = dispari;
-  console.log(totalePariDispari);
+  conteggio.pari = pari;
+  conteggio.dispari = dispari;
+  console.log(conteggio);
 };
 
 contaPariDispari(arrayCasuale);
+*/
+
+// ---------------ESERCIZIO 3---------------------
+
+window.addEventListener("load", () => {
+  const input = document.getElementById("testoUtente");
+  const btn = document.getElementById("bottoneInvio");
+  const body = document.body;
+
+  btn.addEventListener("click", () => {
+    body.innerHTML += `<p>${input.value}</p>`;
+  });
+});
