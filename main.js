@@ -1,4 +1,7 @@
-const stringa = " Javascrip é fantastico ";
+// ---------------ESERCIZIO 1----------------------
+
+/*
+const stringa = " Javascript é fantastico ";
 let oggetto = {};
 
 const analizzaTesto = (testo) => {
@@ -25,3 +28,44 @@ const analizzaTesto = (testo) => {
 
 analizzaTesto(stringa);
 console.log(oggetto);
+*/
+
+// ---------------ESERCIZIO 2----------------------
+
+let arrayCasuale = [];
+const numeroElementi = 10;
+const valoreMinimo = 1;
+const valoreMassimo = 30;
+
+const riempiArray = (num, min, max) => {
+  for (let i = 0; i < num; i++) {
+    let generaNumeri = Math.floor(Math.random() * max + min);
+    arrayCasuale.push(generaNumeri);
+  }
+};
+
+riempiArray(numeroElementi, valoreMinimo, valoreMassimo);
+console.log(arrayCasuale);
+
+let pari = 0;
+let dispari = 0;
+let totalePariDispari = {
+  pari: 0,
+  dispari: 0,
+};
+
+const contaPariDispari = (numeri) => {
+  for (let j = 0; j < numeri.length; j++) {
+    if (numeri[j] % 2 === 0) {
+      pari = pari + 1;
+    } else {
+      dispari = dispari + 1;
+    }
+  }
+
+  totalePariDispari.pari = pari;
+  totalePariDispari.dispari = dispari;
+  console.log(totalePariDispari);
+};
+
+contaPariDispari(arrayCasuale);
