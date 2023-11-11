@@ -81,6 +81,10 @@ window.addEventListener("load", () => {
   const body = document.body;
 
   btn.addEventListener("click", () => {
-    body.innerHTML += `<p>${input.value}</p>`;
+    if (input.value === "") {
+      body.innerHTML += `<p>Inserisci del testo prima di inviare!</p>`;
+    } else {
+      body.innerHTML += `<p>${input.value}</p>`;
+    }
   });
 });
