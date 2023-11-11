@@ -75,6 +75,7 @@ contaPariDispari(arrayCasuale);
 
 // ---------------ESERCIZIO 3---------------------
 
+/*
 window.addEventListener("load", () => {
   const input = document.getElementById("testoUtente");
   const btn = document.getElementById("bottoneInvio");
@@ -85,6 +86,48 @@ window.addEventListener("load", () => {
       body.innerHTML += `<p>Inserisci del testo prima di inviare!</p>`;
     } else {
       body.innerHTML += `<p>${input.value}</p>`;
+    }
+  });
+});
+*/
+
+// ---------------ESERCIZIO 3 CON BOUNS---------------------
+
+window.addEventListener("load", () => {
+  const input = document.getElementById("testoUtente");
+  const btn = document.getElementById("bottoneInvio");
+  const body = document.body;
+  let oggetto = {};
+
+  btn.addEventListener("click", () => {
+    if (input.value === "") {
+      body.innerHTML += `<p>Inserisci del testo prima di inviare!</p>`;
+    } else {
+      const analizzaTesto = (testo) => {
+        const originale = testo;
+        oggetto.originale = originale;
+
+        const minuscolo = testo.toLowerCase();
+        oggetto.minuscolo = minuscolo;
+
+        const senzaSpazi = testo.slice(1, -1);
+        oggetto.senzaSpazi = senzaSpazi;
+
+        const numeroCaratteri = testo.length;
+        oggetto.numeroCaratteri = numeroCaratteri;
+
+        const contieneJS = testo.includes("javascript", "JS"); // DOESN'T WORK PROPERLY
+        oggetto.contieneJS = contieneJS;
+
+        const caratteriTesto = testo.split("");
+        const reverseTesto = caratteriTesto.reverse();
+        const reverse = reverseTesto.join("");
+        oggetto.invertita = reverse;
+      };
+      analizzaTesto(input.value);
+
+      body.innerHTML += `<ul>${oggetto}</ul>`;
+      console.log(oggetto);
     }
   });
 });
