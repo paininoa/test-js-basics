@@ -1,39 +1,40 @@
 // ---------------ESERCIZIO 1----------------------
-
 /*
 const stringa = " Javascript é fantastico ";
-let oggetto = {};
 
 const analizzaTesto = (testo) => {
+  let oggetto = {};
+
   const originale = testo;
   oggetto.originale = originale;
 
   const minuscolo = testo.toLowerCase();
   oggetto.minuscolo = minuscolo;
 
-  const senzaSpazi = testo.slice(1, -1);
+  const senzaSpazi = testo.trim();
   oggetto.senzaSpazi = senzaSpazi;
 
-  const numeroCaratteri = testo.length - 2;
+  const numeroCaratteri = testo.trim().length;
   oggetto.numeroCaratteri = numeroCaratteri;
 
-  const contieneJS = testo.includes("javascript", "JS"); // DOESN'T WORK PROPERLY
+  const contieneJS = testo.includes("JS") || testo.includes("javascript");
   oggetto.contieneJS = contieneJS;
 
   const caratteriTesto = testo.split("");
   const reverseTesto = caratteriTesto.reverse();
   const reverse = reverseTesto.join("");
   oggetto.invertita = reverse;
+
+  return oggetto;
 };
 
-analizzaTesto(stringa);
-console.log(oggetto);
+let risultato = analizzaTesto(stringa);
+console.log(risultato);
 */
 
 // ---------------ESERCIZIO 2----------------------
 
 /*
-
 let arrayCasuale = [];
 const numeroElementi = 10;
 const valoreMinimo = 1;
@@ -83,7 +84,7 @@ window.addEventListener("load", () => {
 
   btn.addEventListener("click", () => {
     if (input.value === "") {
-      body.innerHTML += `<p>Inserisci del testo prima di inviare!</p>`;
+      alert('Inserisci del testo prima di inviare!');
     } else {
       body.innerHTML += `<p>${input.value}</p>`;
     }
@@ -101,7 +102,7 @@ window.addEventListener("load", () => {
 
   btn.addEventListener("click", () => {
     if (input.value === "") {
-      body.innerHTML += `<p>Inserisci del testo prima di inviare!</p>`;
+      alert("Inserisci del testo prima di inviare!");
     } else {
       const analizzaTesto = (testo) => {
         const originale = testo;
